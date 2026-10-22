@@ -13,6 +13,8 @@ ring, no video and no pre-rendered image** anywhere in the render path.
 ![WebGL2](https://img.shields.io/badge/WebGL-2-orange)
 ![three.js r160 vendored](https://img.shields.io/badge/three.js-r160%20vendored-black)
 
+### [▶ Live demo](https://sun-sh902.github.io/gargantua/) · [Source](https://github.com/Sun-sh902/gargantua)
+
 Plain HTML + CSS + ES modules and a vendored copy of three.js. **No build
 step, no npm install, no network access at run time.**
 
