@@ -19,12 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
------------------------------------------------------------------------------
-Bundled third-party components:
-  vendor/three/three.module.js      three.js r160            MIT, © three.js authors
-  vendor/three/addons/.../OrbitControls.js                   MIT, © three.js authors
-  GLSL 3-D simplex noise (src/glsl/lib.js)                   MIT, © Ashima Arts /
-                                                                  Stefan Gustavson
-  ACES filmic fit (src/glsl/post.js)                         MIT, © Stephen Hill
-All other code, shaders, the ambient audio asset and the HUD are original.

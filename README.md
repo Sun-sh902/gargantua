@@ -346,4 +346,5 @@ Results of the last full run are in [`TESTING.md`](TESTING.md).
 three.js r160 (MIT) is vendored under `vendor/three/`; 3-D simplex noise is
 Ashima Arts / Stefan Gustavson (MIT); the ACES fit is Stephen Hill's. Everything
 else — geodesic integrator, disk model, sky, bloom chain and HUD — is written
-for this project.
+for this project and released under the [MIT License](LICENSE).
+See [NOTICE](NOTICE) for the full third-party attributions.
