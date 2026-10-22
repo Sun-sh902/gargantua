@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+# The site is plain HTML/CSS/ES modules with a vendored three.js — there is
+# nothing to build, so the repository root *is* the artifact.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      # sanity check: the shader and the entry point must be present, and the
+      # vendored three.js must resolve relative to index.html
+      - name: Verify static assets
+        run: |
+          set -e
+          test -f index.html
+          test -f src/main.js
+          test -f src/glsl/blackhole.js
+          test -f vendor/three/three.module.js
+          test -f assets/audio/ambient-drone.wav
+          echo "static tree OK"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

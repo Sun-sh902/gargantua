@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-app="gargantua">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+<meta name="theme-color" content="#000000" />
+<meta name="description" content="GARGANTUA — a real-time Schwarzschild black hole raytracer. Null geodesics integrated per-pixel in a fragment shader: event horizon, photon ring, gravitationally lensed accretion disk." />
+<title>GARGANTUA — Schwarzschild Black Hole Raytracer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23000'/%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23ffb457' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23000'/%3E%3Ccircle cx='32' cy='32' r='13.5' fill='none' stroke='%23fff1cf' stroke-width='1.6'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<canvas id="gl" aria-label="Schwarzschild black hole raytracer viewport"></canvas>
+
+<!-- ── boot / fatal overlay ─────────────────────────────────────────────── -->
+<div id="boot" class="overlay">
+  <div class="boot-inner">
+    <div class="boot-title">GARGANTUA</div>
+    <div class="boot-sub">Schwarzschild Black Hole Raytracer</div>
+    <div class="boot-bar"><i id="bootBar"></i></div>
+    <div class="boot-status" id="bootStatus">initialising renderer…</div>
+  </div>
+</div>
+
+<div id="fatal" class="overlay hidden">
+  <div class="fatal-inner">
+    <div class="fatal-title">RENDERER ERROR</div>
+    <pre id="fatalMsg"></pre>
+    <div class="fatal-hint">The simulation keeps running where possible. Press <kbd>R</kbd> to re-initialise.</div>
+  </div>
+</div>
+
+<div id="contextLost" class="overlay hidden">
+  <div class="boot-inner">
+    <div class="boot-title small">WEBGL CONTEXT LOST</div>
+    <div class="boot-status">waiting for the GPU to hand the context back…</div>
+  </div>
+</div>
+
+<!-- ── HUD ──────────────────────────────────────────────────────────────── -->
+<div id="hud" class="hud">
+  <header id="titlebar">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <h1>GARGANTUA</h1>
+      <span class="brand-sub">Schwarzschild&nbsp;Raytracer</span>
+    </div>
+    <div class="brand-right">
+      <span id="badgeQuality" class="badge">HIGH</span>
+      <span id="badgeView" class="badge dim">VIEW 0 · BEAUTY</span>
+      <button id="btnPanel" class="btn icon" title="Toggle control panel (Tab)">☰</button>
+      <button id="btnHelp" class="btn icon" title="Shortcuts (/)">?</button>
+    </div>
+  </header>
+
+  <div id="telemetry" class="panel telemetry">
+    <div class="row"><span>fps</span><b id="tFps">–</b></div>
+    <div class="row"><span>frame</span><b id="tMs">–</b></div>
+    <div class="row"><span>render</span><b id="tRes">–</b></div>
+    <div class="row"><span>steps/ray</span><b id="tSteps">–</b></div>
+    <div class="row"><span>geodesic</span><b id="tMode">–</b></div>
+    <div class="row"><span>r<sub>obs</sub></span><b id="tR">–</b></div>
+    <div class="row"><span>incl</span><b id="tIncl">–</b></div>
+    <div class="row"><span>disk T</span><b id="tDisk">–</b></div>
+    <div class="row"><span>t</span><b id="tTime">–</b></div>
+    <div class="row"><span>gpu</span><b id="tGpu">–</b></div>
+  </div>
+
+  <aside id="panel" class="panel controls">
+    <div class="panel-head">
+      <span>CONTROL DECK</span>
+      <div class="panel-head-actions">
+        <button id="btnReset" class="btn tiny" title="Reset all parameters (Shift+R)">reset</button>
+        <button id="btnCollapse" class="btn tiny" title="Collapse">–</button>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="group">
+        <div class="group-title">VIEW PRESET</div>
+        <div id="presets" class="chips"></div>
+        <div class="chips">
+          <button class="btn chip" id="btnCine">cine loop <kbd>C</kbd></button>
+          <button class="btn chip" id="btnMusic">music <kbd>M</kbd></button>
+          <button class="btn chip" id="btnPause">pause <kbd>space</kbd></button>
+          <button class="btn chip" id="btnShot">png <kbd>S</kbd></button>
+        </div>
+        <div class="field">
+          <label for="selQuality">quality</label>
+          <select id="selQuality">
+            <option value="standard">Standard</option>
+            <option value="high">High</option>
+            <option value="cinematic">Cinematic</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="selDebug">debug view</label>
+          <select id="selDebug"></select>
+        </div>
+        <div class="toggles" id="toggles"></div>
+      </div>
+      <div id="sliders"></div>
+    </div>
+  </aside>
+
+  <div id="viewDesc" class="hud-caption"></div>
+
+  <footer id="legend" class="hud-footer">
+    <span><kbd>0</kbd>–<kbd>9</kbd> views</span>
+    <span><kbd>⇧1</kbd>–<kbd>⇧4</kbd> presets</span>
+    <span><kbd>C</kbd> cine</span>
+    <span><kbd>M</kbd> music</span>
+    <span><kbd>H</kbd> hud</span>
+    <span><kbd>space</kbd> time</span>
+    <span><kbd>S</kbd> png</span>
+    <span><kbd>T</kbd> quality</span>
+    <span><kbd>F</kbd> fullscreen</span>
+    <span><kbd>/</kbd> keys</span>
+  </footer>
+</div>
+
+<!-- ── shortcuts sheet ──────────────────────────────────────────────────── -->
+<div id="keys" class="overlay sheet hidden">
+  <div class="sheet-inner">
+    <h2>SHORTCUTS &amp; INTERFACE</h2>
+    <div class="sheet-cols" id="keysBody"></div>
+    <div class="sheet-foot">press <kbd>/</kbd> or <kbd>esc</kbd> to close</div>
+  </div>
+</div>
+
+<div id="toast" class="toast hidden"></div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three/three.module.js",
+    "three/addons/": "./vendor/three/addons/"
+  }
+}
+</script>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

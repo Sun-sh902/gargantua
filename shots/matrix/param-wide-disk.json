@@ -1,0 +1,175 @@
+{
+  "ok": true,
+  "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70",
+  "out": "/Users/zhangshenghe/Documents/Gargantua/shots/matrix/param-wide-disk.png",
+  "width": 640,
+  "height": 360,
+  "viewport": {
+    "width": 640,
+    "height": 360
+  },
+  "ready": true,
+  "readyMs": 5017,
+  "readyState": "thenable",
+  "settleMs": 150,
+  "fullpage": false,
+  "errors": [],
+  "warnings": [
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000cc600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3045,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    }
+  ],
+  "pageWarnings": [
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000cc600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3045,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    }
+  ],
+  "harnessWarnings": [],
+  "logs": [
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000cc600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3045,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    }
+  ],
+  "logsTotal": 4,
+  "shaderWarnings": [
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000cc600]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3044,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    },
+    {
+      "t": 3045,
+      "level": "warning",
+      "source": "log.rendering",
+      "text": "[.WebGL-0x134000ce400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+      "url": "http://127.0.0.1:8123/?shot=1&hud=0&frames=3&diskInner=2.2&diskOuter=28&fov=70"
+    }
+  ],
+  "failedRequests": 0,
+  "failedRequestList": [],
+  "nonBlack": true,
+  "luminance": {
+    "mean": 0.17857335571555355,
+    "max": 0.9678094117647058,
+    "brightFraction": 0.92359375,
+    "mean255": 45.53620570746615,
+    "pixels": 230400
+  },
+  "exitCode": 0,
+  "capturedAt": "2026-09-17T15:34:59.629Z",
+  "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "chromeArgs": [
+    "--headless=new",
+    "--user-data-dir=/var/folders/gx/91zp053n7c375xsqymq1rqpw0000gn/T/gargantua-capture-AUmO6H",
+    "--remote-debugging-port=0",
+    "--remote-allow-origins=*",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-extensions",
+    "--hide-scrollbars",
+    "--mute-audio",
+    "--window-size=640,360",
+    "--use-gl=angle",
+    "--use-angle=swiftshader",
+    "--enable-unsafe-swiftshader",
+    "--enable-webgl",
+    "--ignore-gpu-blocklist",
+    "--disable-gpu-sandbox",
+    "--disable-gpu-watchdog",
+    "--disable-hang-monitor",
+    "--disable-backgrounding-occluded-windows",
+    "--disable-renderer-backgrounding",
+    "about:blank"
+  ]
+}

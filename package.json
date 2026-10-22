@@ -1,0 +1,16 @@
+{
+  "name": "gargantua",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "GARGANTUA — a real-time Schwarzschild black hole raytracer. Per-pixel null-geodesic integration in a fragment shader, no build step required.",
+  "keywords": ["black-hole", "schwarzschild", "raytracing", "glsl", "three.js", "general-relativity"],
+  "license": "MIT",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "serve": "node tools/serve.mjs --port 8123",
+    "shot": "node tools/capture.mjs --url \"http://127.0.0.1:8123/?shot=1&hud=0\" --out shots/gargantua.png --width 1280 --height 720 --wait 30000",
+    "audio": "node tools/make-audio.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

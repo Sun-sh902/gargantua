@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# tooling / editor state
+.workbuddy/
+node_modules/
+*.log
+.vscode/
+.idea/
+
+# transient captures (the curated gallery under shots/ is committed)
+/out/
+/tmp/
